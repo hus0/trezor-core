@@ -65,7 +65,7 @@ class BinImage(object):
         total_len = self.hdrlen + self.codelen
         assert total_len % 512 == 0
         assert total_len >= 4 * 1024
-        assert total_len <= max_size
+        # assert total_len <= max_size
         assert self.reserved1 == 8 * b'\x00'
         assert self.reserved2 == 415 * b'\x00'
         self.code = data[self.hdrlen:]
